@@ -89,6 +89,9 @@ function playGame(){
     else if(computerScore>humanScore){
         console.log('computer wins')
     }
+    else{
+        console.log('It is a draw')
+    }
 }
 console.log(playGame());
 
