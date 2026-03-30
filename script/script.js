@@ -28,6 +28,7 @@ let humanSelection = getHumanChoice();
 //declare and initialize players score
 let humanScore = 0;
 let computerScore = 0;
+let ties = 0;
 
 //play for one round
 function playRound(computerSelection,humanSelection){
@@ -80,9 +81,13 @@ function playGame(){
         else if(game === 'computer'){
             computerScore++
         }
+        else{
+            ties++
+        }
     }
     console.log('Human Score: '+humanScore);
     console.log('Computer Score: '+ computerScore);
+    console.log('draws '+ ties);
 
     if(humanScore>computerScore){
         console.log('Human wins')
