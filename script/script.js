@@ -51,17 +51,11 @@ function playRound(computerSelection,humanSelection){
         return 'draw';
     }
     else{
-        
-        
+              
         return 'computer';
     }
-    
-
 
 }
-// console.log(humanSelection);
-// console.log(computerSelection);
-
 
 // play game for five rounds
 function playGame(){
