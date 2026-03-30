@@ -47,11 +47,11 @@ function playRound(computerSelection,humanSelection){
         return 'human';
     }
     else if(humanSelection === computerSelection){
-        console.log('it is a tie');
+        
         return 'draw';
     }
     else{
-        console.log(computerSelection + ' beats '+humanSelection+'. Computer wins')
+        
         
         return 'computer';
     }
@@ -59,13 +59,13 @@ function playRound(computerSelection,humanSelection){
 
 
 }
-console.log(humanSelection);
-console.log(computerSelection);
+// console.log(humanSelection);
+// console.log(computerSelection);
 
 
 // play game for five rounds
 function playGame(){
-    for(let i = 1; i<5;i++){
+    for(let i = 0; i<5;i++){
         let humanSelection = getHumanChoice();
         let computerSelection = getComputerChoice();
         let game = playRound(computerSelection,humanSelection);
