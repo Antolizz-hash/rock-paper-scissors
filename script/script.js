@@ -35,20 +35,15 @@ function playRound(computerSelection,humanSelection){
     //compare player selection to determine the winner or if it's a tie
     if(humanSelection === 'rock' && computerSelection === "paper")
     {
-        console.log("Rock beats paper,Human wins");
-        humanScore++;
-        console.log(humanScore);
+        return 'human';
     }
     else if(humanSelection === 'paper' && computerSelection === 'scissors'){
-        console.log("paper beats scissors,Human wins");
-        humanScore++;
-        console.log(humanScore);
+        
         return 'human';
     }
     else if(humanSelection === 'scissors' && computerSelection === 'rock'){
-        console.log("scissors beats rock,Human wins");
-        humanScore++;
-        console.log(humanScore);
+        
+        
         return 'human';
     }
     else if(humanSelection === computerSelection){
@@ -57,8 +52,7 @@ function playRound(computerSelection,humanSelection){
     }
     else{
         console.log(computerSelection + ' beats '+humanSelection+'. Computer wins')
-        computerScore++;
-        console.log(computerScore);
+        
         return 'computer';
     }
     
