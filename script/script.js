@@ -16,14 +16,22 @@ function getComputerChoice(){
 //store computer choice in a variable
 let computerSelection = getComputerChoice();
 
-//get human choice
-function getHumanChoice(){
-    let humanChoice = prompt('Enter either rock, paper, or scissors:').toLowerCase();
-    return humanChoice;
-}
+//get all the buttons
+let buttons = document.querySelectorAll('button'); 
 
-//store human choice into a variable
-let humanSelection = getHumanChoice();
+//loop through the btns
+buttons.forEach(button =>{
+    button.addEventListener('click', getHumanChoice);
+})
+
+//get human choice
+function getHumanChoice(e){
+    let humanChoice = e.target.value;
+    console.log(humanChoice);
+    return humanChoice;
+
+    
+}
 
 //declare and initialize players score
 let humanScore = 0;
@@ -57,36 +65,7 @@ function playRound(computerSelection,humanSelection){
 
 }
 
-// play game for five rounds
-function playGame(){
-    for(let i = 0; i<5;i++){
-        let humanSelection = getHumanChoice();
-        let computerSelection = getComputerChoice();
-        let game = playRound(computerSelection,humanSelection);
-        if(game === 'human'){
-            humanScore++;
-        }
-        else if(game === 'computer'){
-            computerScore++
-        }
-        else{
-            ties++
-        }
-    }
-    console.log('Human Score: '+humanScore);
-    console.log('Computer Score: '+ computerScore);
-    console.log('draws '+ ties);
 
-    if(humanScore>computerScore){
-        console.log('Human wins')
-    }
-    else if(computerScore>humanScore){
-        console.log('computer wins')
-    }
-    else{
-        console.log('It is a draw')
-    }
-}
-console.log(playGame());
+// console.log(playGame());
 
 
