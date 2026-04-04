@@ -53,33 +53,34 @@ function playRound(computerSelection,humanSelection){
     {
         
         result.textContent = "Human wins";
-        return 'human';
+        
     }
     else if(humanSelection === 'paper' && computerSelection === 'scissors'){
         
         result.textContent = "Human wins";
-        return 'human';
+        
     }
     else if(humanSelection === 'scissors' && computerSelection === 'rock'){
         
         
         result.textContent = "Human wins"
-        return 'human';
+        
+        
     }
     else if(humanSelection === computerSelection){
         
         result.textContent = "it is a tie"
-        return 'draw';
+        
+        
     }
     else{
            
           result.textContent = "Computer wins";   
-        return 'computer';
+        
+          
     }
 
 }
 
-
-// console.log(playRound());
 
 
