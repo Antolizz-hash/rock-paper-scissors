@@ -47,23 +47,28 @@ let ties = 0;
 function playRound(computerSelection,humanSelection){
 
     let result = document.querySelector('#result');
+    result.classList.add('result');
+    result.style.padding='20px';
+    result.style.fontSize = '28px'
     
     //compare player selection to determine the winner or if it's a tie
     if(humanSelection === 'rock' && computerSelection === "paper")
     {
-        
-        result.textContent = "Human wins";
-        
+    
+        humanScore++
+        result.textContent = "Human wins "+ "human score: " +humanScore;
     }
     else if(humanSelection === 'paper' && computerSelection === 'scissors'){
         
-        result.textContent = "Human wins";
+        humanScore++
+        result.textContent = "Human wins "+ "human score: " +humanScore;
         
     }
     else if(humanSelection === 'scissors' && computerSelection === 'rock'){
         
         
-        result.textContent = "Human wins"
+        humanScore++
+        result.textContent = "Human wins "+ "human score: " +humanScore;
         
         
     }
@@ -75,7 +80,9 @@ function playRound(computerSelection,humanSelection){
     }
     else{
            
-          result.textContent = "Computer wins";   
+        computerScore++ 
+        result.textContent = "Computer wins "+ 'Computer Score: '+computerScore; 
+         
         
           
     }
