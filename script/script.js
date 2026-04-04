@@ -14,7 +14,7 @@ function getComputerChoice(){
     return computerChoice.toLowerCase();  
 }
 //store computer choice in a variable
-let computerSelection = getComputerChoice();
+
 
 //get all the buttons
 let buttons = document.querySelectorAll('button'); 
@@ -26,12 +26,17 @@ buttons.forEach(button =>{
 
 //get human choice
 function getHumanChoice(e){
-    let humanChoice = e.target.value;
-    console.log(humanChoice);
-    return humanChoice;
+    let humanSelection = e.target.value;
+    console.log(humanSelection);
+    
+
+    let computerSelection = getComputerChoice();
+    playRound(humanSelection,computerSelection);
 
     
 }
+
+
 
 //declare and initialize players score
 let humanScore = 0;
@@ -40,32 +45,41 @@ let ties = 0;
 
 //play for one round
 function playRound(computerSelection,humanSelection){
+
+    let result = document.querySelector('#result');
+    
     //compare player selection to determine the winner or if it's a tie
     if(humanSelection === 'rock' && computerSelection === "paper")
     {
+        
+        result.textContent = "Human wins";
         return 'human';
     }
     else if(humanSelection === 'paper' && computerSelection === 'scissors'){
         
+        result.textContent = "Human wins";
         return 'human';
     }
     else if(humanSelection === 'scissors' && computerSelection === 'rock'){
         
         
+        result.textContent = "Human wins"
         return 'human';
     }
     else if(humanSelection === computerSelection){
         
+        result.textContent = "it is a tie"
         return 'draw';
     }
     else{
-              
+           
+          result.textContent = "Computer wins";   
         return 'computer';
     }
 
 }
 
 
-// console.log(playGame());
+// console.log(playRound());
 
 
