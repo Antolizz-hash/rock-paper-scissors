@@ -26,6 +26,7 @@ buttons.forEach(button =>{
 
 //get human choice
 function getHumanChoice(e){
+    if (humanScore === 5 || computerScore === 5) return;
     let humanSelection = e.target.value;
     console.log(humanSelection);
     
@@ -43,13 +44,16 @@ let humanScore = 0;
 let computerScore = 0;
 let ties = 0;
 
-//play for one round
-function playRound(computerSelection,humanSelection){
 
-    let result = document.querySelector('#result');
+let result = document.querySelector('#result');
     result.classList.add('result');
     result.style.padding='20px';
     result.style.fontSize = '28px'
+
+//play for one round
+function playRound(computerSelection,humanSelection){
+
+    
     
     //compare player selection to determine the winner or if it's a tie
     if(humanSelection === 'rock' && computerSelection === "paper")
@@ -82,11 +86,19 @@ function playRound(computerSelection,humanSelection){
            
         computerScore++ 
         result.textContent = "Computer wins "+ 'Computer Score: '+computerScore; 
-         
-        
-          
+   
     }
 
+    checkWinner();
+
+}
+
+function checkWinner(){
+    if (humanScore === 5) {
+        result.textContent = "Congratulations, you won the game"
+    } else if (computerScore === 5) {
+        result.textContent = "Computer wins the game!";
+    }
 }
 
 
